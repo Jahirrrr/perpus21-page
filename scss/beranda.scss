@@ -1,0 +1,626 @@
+@use './modules/mixin' as m;
+@import './../node_modules/bootstrap/scss/bootstrap.scss';
+
+$nav: #30396E;
+$putih: #ffffff;
+$w-satu: #3871D0;
+$w-dua: #54BAEB;
+$text-h2: #19245F;
+$text-h3: #2E334E;
+$text-p: #3A3B41;
+$text-u: #1C2661;
+$border: #58C6EF;
+$foot-p: #404040;
+$button: #619AEF;
+
+*{
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $putih;
+}
+
+.bg-transparent{
+    transition: all ease-in 0.3s;
+}
+
+.nav-color{
+    background-color: $w-dua;
+    transition: all ease-in-out 0.5s;
+}
+
+.navbar {
+    .container{
+        .navbar-toggler{
+            border: 2px solid $text-p;
+        }
+        .navbar-collapse{
+            .navbar-nav{
+                @include m.flex(row, center);
+                .nav-item{
+                    padding: 0 20px;
+                    a{
+                        color: $nav;
+                    }
+                    a:hover{
+                        color: $nav;
+                    }
+                }
+                //media query
+                @media screen and (max-width: 767px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                //media query
+                @media only screen and (min-width: 768px) and (max-width: 991px){
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            //media query
+            @media screen and (max-width: 767px) {
+                background: $w-dua;
+            }
+
+            //media query
+            @media only screen and (min-width: 768px) and (max-width: 991px){
+                background: $w-dua;
+            }
+        }
+    }
+}
+
+.nav-link:hover{
+    border-bottom: 2px solid #30396E;
+    font-weight: 600;
+    transition: all ease-in-out 0.2s;
+}
+
+.btn-ppob{
+    @include m.font-style(18px, 20px, 400);
+    background-color: $button;
+    color: $putih;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.btn:hover{
+    background-color: $button;
+    border-radius: 10px;
+    color: $putih;
+	-webkit-animation: jello-horizontal 0.9s both;
+            animation: jello-horizontal 0.9s both;
+}
+
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.banner{
+    height: 850px;
+    background-image: url(../images/bnd-ban1.png), url(../images/ban-bnd2.png);
+    background-repeat: no-repeat;
+    background-position: top left, top right;
+    background-size: 10%, 40%;
+    .container{
+        @include m.flex(row, center);
+        padding-top: 150px;
+        .banner-caption {
+            h2{
+                @include m.font-style(48px, 72px, 700);
+                color: $text-h2;
+
+                //media query
+                @media only screen and (max-width: 767px){
+                    @include m.font-style(36px, 40px, 700);
+                }
+
+                //media query
+                @media only screen and (min-width: 768px) and (max-width: 991px){
+                    @include m.font-style(40px, 40px, 700);
+                }
+            }
+            p{
+                @include m.font-style(16px, 30px, 300);
+                color: $text-p;
+            }
+            .btn-banner{
+                background-color: $button;
+                border-radius: 10px;
+                color: $putih;
+            }
+        }
+
+        //media query
+        @media only screen and (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    //media query
+    @media only screen and (max-width: 767px) {
+        height: 1000px;
+    }
+
+    //media query
+    @media only screen and (min-width: 768px) and (max-width: 991px){
+        height: 650px;
+    }
+}
+
+.keunggulan{
+    padding: 100px 30px 100px 30px;
+    background-image: url(../images/bg-bnd.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 1172px;
+    .unggul{
+        .judul h2{
+            @include m.font-style(56px, 72px, 700);
+            color: $putih;
+
+            //media query
+            @media only screen and (max-width: 767px){
+                @include m.font-style(36px, 40px, 700);
+                padding-top: 50px;
+            }
+
+            //media query
+            @media only screen and (min-width: 768px) and (max-width: 991px){
+                @include m.font-style(40px, 40px, 700);
+            }
+        }
+        .isi{
+            @include m.flex(row, center);
+            align-content: center;
+            margin: 50px 0;
+            .col{
+                .card{
+                    .card-body{
+                        @include m.flex(column, center);
+                        align-items: center;
+                        text-align: center;
+                    }
+                    img{
+                        width: 80px;
+                        margin-bottom: 20px;
+                    }
+                    .card-title{
+                        @include m.font-style(20px, 36px, 600);
+                        color: $text-u;
+                    }
+                    .card-text{
+                        color: #3A3B41;
+                        padding-right: 10px;
+                    }
+                }
+                //media query
+                @media only screen and (max-width: 767px){
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
+    .tentang{
+        padding: 50px 0;
+        .tang{
+            @include m.flex(row, center);
+            align-items: center;
+            .tentang-img{
+                img{
+                    width: 70%;
+                }
+            }
+            .tentang-caption{
+                margin-left: 50px;
+                h2{
+                    @include m.font-style(56px, 72px, 700);
+                    color: $putih;
+
+                    //media query
+                    @media only screen and (max-width: 767px){
+                        @include m.font-style(36px, 40px, 700);
+                    }
+
+                    //media query
+                    @media only screen and (min-width: 768px) and (max-width: 991px){
+                        @include m.font-style(40px, 40px, 700);
+                        color: $text-h2;
+                    }
+                }
+                p{
+                    @include m.font-style(16px, 24px, 400);
+                    text-align: justify;
+                    color: $putih;
+
+                    //media query
+                    @media only screen and (min-width: 768px) and (max-width: 991px){
+                        color: $text-p;
+                    }
+                }
+
+                //media query
+                @media only screen and (max-width: 767px){
+                    margin-left: 0;
+                }
+                
+                //media query
+                @media only screen and (min-width: 768px) and (max-width: 991px){
+                    @include m.font-style(40px, 40px, 700);
+                }
+            }
+            //media query
+            @media only screen and (max-width: 767px){
+                flex-direction: column;
+            }
+        }
+        //media query
+        @media only screen and (min-width: 768px) and (max-width: 991px){
+            padding: 20px;
+        }
+    }
+    //media query
+    @media only screen and (max-width: 767px){
+        background-size: 850%;
+        height: 500%;
+    }
+}
+
+.artikel{
+    padding: 100px 0;
+    .container{
+        .artikel-caption{
+            text-align: center;
+            @include m.flex(column, center);
+            h2{
+                @include m.font-style(56px, 72px, 700);
+                color: $text-h2;
+                
+                //media query
+                @media only screen and (max-width: 767px){
+                    @include m.font-style(36px, 40px, 700);
+                }
+
+                //media query
+                @media only screen and (min-width: 768px) and (max-width: 991px){
+                    @include m.font-style(40px, 40px, 700);
+                }
+            }
+            p{
+                @include m.font-style(20px, 32px, 400);
+                color: $text-h2;
+            }
+        }
+        .row{
+            margin-top: 20px;
+            .col{
+                margin: 12px;
+                width: 22rem;
+                border: 2px solid $border;
+                border-radius: 24px;
+                .carda{
+                    padding: 15px;
+                    img{
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                        border-radius: 24px;
+                    }
+                    img:hover{
+                        transform: scale(1.1);
+                        transition: all ease-in-out 0.3s;
+                    }
+                    .card-body{
+                        h4{
+                            @include m.font-style(16px, 20px, 500);
+                            margin-top: 30px;
+                            color: $border;
+                        }
+                        h5{
+                            @include m.font-style(20px, 30px, 600);
+                            color: $text-h2;
+                            margin-top: 20px;
+                        }
+                        h5:hover{
+                            color: $w-satu;
+                            cursor: pointer;
+                        }
+                        p{
+                            @include m.font-style(16px, 24px, 400);
+                            color: $text-p;
+                            margin-top: 10px
+                        }
+                        h6{
+                            a{
+                                @include m.font-style(16px, 20px, 600);
+                                color: $w-satu;
+                                text-decoration: none;
+                            }
+                            a:hover{
+                                color: #19245F;
+                            }
+                        }
+                    }
+                }
+                //media query
+                @media only screen and (max-width: 767px){
+                    width: 18rem;
+                }
+
+                //media query
+                @media only screen and (min-width: 768px) and (max-width: 991px){
+                    width: 13rem;
+                }
+            }
+            //media query
+            @media only screen and (max-width: 767px){
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.galeri{
+    padding: 100px 0;
+    width: 100%;
+    height: 650px;
+    background-repeat: no-repeat;
+    background-image: url(../images/bnd-galbg.png);
+    background-position: left top;
+    background-size: 40%;
+    .container{
+        padding: 20px 0;
+        h1{
+            @include m.font-style(56px, 72px, 700);
+            color: $text-h2;
+            
+            //media query
+            @media only screen and (max-width: 767px){
+                @include m.font-style(36px, 40px, 700);
+            }
+
+            //media query
+            @media only screen and (min-width: 768px) and (max-width: 991px){
+                @include m.font-style(40px, 40px, 700);
+            }
+        }
+        .row{
+            h2{
+                @include m.font-style(20px, 20px, 500);
+                color: $text-h2;
+            }
+            .btn-galeri{
+                background-color: $button;
+                color: $putih;
+                border-radius: 10px;
+            }
+        }
+        .content{
+            @include m.flex(row, center);
+            align-items: center;
+            margin-top: 20px;
+            .card-box{
+                width: 20rem;
+                margin: 20px 30px;
+                img{
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                    border-radius: 24px;
+                }
+                img:hover{
+                    transform: scale(1.1);
+                    transition: all ease-in-out 0.3s;
+                }
+                //media query
+                @media only screen and (max-width: 767px){
+                    width: 16rem;
+                    margin: 10px 20px;
+                }
+            }
+            //media query
+            @media only screen and (max-width: 767px){
+                flex-direction: column;
+            }
+        }
+    }
+    //media query
+    @media only screen and (max-width: 767px){
+        height: auto;
+        padding: 20px;
+    }
+}
+
+.daftar{
+    .container{
+        .cardd{
+            @include m.flex(row, center);
+            align-items: center;
+            border-radius: 24px;
+            padding: 20px;
+            background: linear-gradient(180deg, #3871D0 -10.93%, #58C6EF 114.31%);
+            background-repeat: no-repeat;
+            margin: 100px 0;
+            width: 100%;
+            height: 350px;
+            .daftar-caption{
+                padding: 30px;
+                h2{
+                    @include m.font-style(48px, 72px, 700);
+                    color: $putih;
+            
+                    //media query
+                    @media only screen and (max-width: 767px){
+                        @include m.font-style(36px, 40px, 700);
+                    }
+        
+                    //media query
+                    @media only screen and (min-width: 768px) and (max-width: 991px){
+                        @include m.font-style(40px, 40px, 700);
+                    }
+                }
+                p{
+                    @include m.font-style(18px, 24px, 400);
+                    color: $putih;
+                    padding: 10px 0;
+
+                    //media query
+                    @media only screen and (min-width: 768px) and (max-width: 991px){
+                        @include m.font-style(16px, 20px, 400);
+                    }
+                }
+                a{
+                    background-color: $putih;
+                    color: $w-satu;
+                }
+            }
+            //media query
+            @media only screen and (max-width: 767px){
+                flex-direction: column;
+                height: auto;
+            }
+
+            //media query
+            @media only screen and (min-width: 768px) and (max-width: 991px){
+                height: 450px;
+            }
+        }
+    }
+}
+
+.skeleton{
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.footer1{
+    @include m.flex(row, center);
+    margin-top: 200px;
+    background-color: #F6FAFD;
+    .container{
+        @include m.flex(row, center);
+        .row{
+            h4{
+                @include m.font-style(24px, 28px, 600);
+                color: $text-h2;
+            }
+            .inagata{
+                img{
+                    margin-top: 10px;
+                }
+            }
+            .informasi{
+                @include m.flex(column, flex-start);
+                a{
+                    text-decoration: none;
+                    color: $foot-p;
+                    margin-bottom: 10px;
+                }
+                a:hover{
+                    color: $w-satu;
+                    letter-spacing: 1px;
+                }
+            }
+            .tentangf{
+                a{
+                    @include m.flex(column, flex-start);
+                    text-decoration: none;
+                    color: $foot-p;
+                    margin-bottom: 10px;
+                }
+                a:hover{
+                    color: $w-satu;
+                    letter-spacing: 1px;
+                }
+            }
+            .ikuti{
+                @include m.flex(column, flex-start);
+                a{
+                    text-decoration: none;
+                    color: $text-h2;
+                    margin-bottom: 10px;
+                    span{
+                        color: $foot-p;
+                    }
+                }
+                a span:hover{
+                    color: $w-satu;
+                    letter-spacing: 1px;
+                }
+            }
+            .copy {
+                p{
+                    @include m.flex(row, center);
+                    text-align: center;
+                    color: $foot-p;
+                }
+            }
+        }
+    }
+}

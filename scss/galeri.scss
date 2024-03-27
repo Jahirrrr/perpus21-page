@@ -1,0 +1,371 @@
+@use './modules/mixin' as m;
+@import './../node_modules/bootstrap/scss/bootstrap.scss';
+
+$nav: #30396E;
+$putih: #ffffff;
+$w-satu: #3871D0;
+$w-dua: #54BAEB;
+$text-h2: #19245F;
+$text-h3: #2E334E;
+$text-p: #3A3B41;
+$text-u: #1C2661;
+$border: #58C6EF;
+$foot-p: #404040;
+$button: #619AEF;
+
+*{
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $putih;
+}
+
+.bg-transparent{
+    transition: all ease-in 0.3s;
+}
+
+.nav-color{
+    background-color: $w-dua;
+    transition: all ease-in-out 0.5s;
+}
+
+.navbar {
+    .container{
+        .navbar-toggler{
+            border: 2px solid $text-p;
+        }
+        .navbar-collapse{
+            .navbar-nav{
+                @include m.flex(row, center);
+                .nav-item{
+                    padding: 0 20px;
+                    a{
+                        color: $nav;
+                    }
+                    a:hover{
+                        color: $nav;
+                    }
+                }
+                //media query
+                @media screen and (max-width: 767px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                //media query
+                @media only screen and (min-width: 768px) and (max-width: 991px){
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            //media query
+            @media screen and (max-width: 767px) {
+                background: $w-dua;
+            }
+            //media query
+            @media only screen and (min-width: 768px) and (max-width: 991px){
+                background: $w-dua;
+            }
+        }
+    }
+}
+
+.nav-link:hover{
+    border-bottom: 2px solid #30396E;
+    font-weight: 600;
+    transition: all ease-in-out 0.2s;
+}
+
+.btn-ppob{
+    @include m.font-style(18px, 20px, 400);
+    background-color: $button;
+    color: $putih;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.btn:hover{
+    background-color: $button;
+    border-radius: 10px;
+    color: $putih;
+	-webkit-animation: jello-horizontal 0.9s both;
+            animation: jello-horizontal 0.9s both;
+}
+
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+            transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+            transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.banner{
+    height: 850px;
+    background-image: url(../images/gal-bg1.png), url(../images/gal-bg2.png), url(../images/gal-bg3.png);
+    background-position: top left, bottom left, top right;
+    background-repeat: no-repeat;
+    background-size: 10%, 15%, 40%;
+    .container{
+        @include m.flex(column, center);
+        align-items: center;
+        padding-top: 100px;
+        h2{
+            @include m.font-style(56px, 72px, 700);
+            color: $text-h2;
+
+            //media query
+            @media only screen and (max-width: 767px){
+                @include m.font-style(36px, 40px, 700);
+            }
+
+            //media query
+            @media only screen and (min-width: 768px) and (max-width: 991px){
+                @include m.font-style(40px, 40px, 700);
+                color: $text-h2;
+            }
+        }
+        img{
+            width: 80%;
+
+            //media query
+            @media only screen and (max-width: 767px){
+                width: 100%;
+            }
+        }
+    }
+}
+
+.galeri{
+    .container{
+        margin-top: 60px;
+        h2{
+            @include m.font-style(56px, 72px, 700);
+            color: $text-h2;
+            text-align: center;
+
+            //media query
+            @media only screen and (max-width: 767px){
+                @include m.font-style(36px, 40px, 700);
+            }
+
+            //media query
+            @media only screen and (min-width: 768px) and (max-width: 991px){
+                @include m.font-style(40px, 40px, 700);
+                color: $text-h2;
+            }
+        }
+        .row{
+            padding-top: 30px;
+            .col{
+                @include m.flex(row, center);
+                padding: 10px;
+                .card{
+                    @include m.flex(column, center);
+                    align-items: center;
+                    position: relative;
+                    width: 300px;
+                    height: 300px;
+                    padding: 20px 20px;
+                    background: $putih;
+                    box-shadow: 0px 7px 10px rgba(0,0,0,0.3);
+                    transition: 0.5s ease-in-out;
+                    border-radius: 24px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        border-radius: 24px;
+                    }
+                    .info{
+                        position: relative;
+                        z-index: 3;
+                        color: #fff;
+                        opacity: 0;
+                        transform: translateY(30px);
+                        transition: 0.3s all;
+                        h5{
+                            @include m.flex(column, center);
+                            @include m.font-style(18px, 20px, 400);
+                            align-items: center;
+                            margin-top: 250px;
+
+                            //media query
+                            @media only screen and (max-width: 767px){
+                                @include m.font-style(16px, 18px, 400);
+                                margin-top: 150px;
+                            }
+                        }
+                    }
+                    //media query
+                    @media only screen and (max-width: 767px){
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+                .card::before{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    width: 100%;
+                    height: 20%;
+                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(77, 127, 213, 0.629271), rgb(57, 113, 208, 0.7));
+                    z-index: 2;
+                    transition: 0.3s all;
+                    opacity: 0;
+                    border-radius: 0 0 24px 24px;
+                }
+                .card:hover{
+                    transform: scale(1.15);
+                    .info{
+                        opacity: 1;
+                        transform: translateY(0px);
+                    }
+                }
+                .card:hover:before{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.skeleton{
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.footer1{
+    @include m.flex(row, center);
+    margin-top: 200px;
+    background-color: #F6FAFD;
+    .container{
+        @include m.flex(row, center);
+        .row{
+            h4{
+                @include m.font-style(24px, 28px, 600);
+                color: $text-h2;
+            }
+            .inagata{
+                img{
+                    margin-top: 10px;
+                }
+            }
+            .informasi{
+                @include m.flex(column, flex-start);
+                a{
+                    text-decoration: none;
+                    color: $foot-p;
+                    margin-bottom: 10px;
+                }
+                a:hover{
+                    color: $w-satu;
+                    letter-spacing: 1px;
+                }
+            }
+            .tentangf{
+                a{
+                    @include m.flex(column, flex-start);
+                    text-decoration: none;
+                    color: $foot-p;
+                    margin-bottom: 10px;
+                }
+                a:hover{
+                    color: $w-satu;
+                    letter-spacing: 1px;
+                }
+            }
+            .ikuti{
+                @include m.flex(column, flex-start);
+                a{
+                    text-decoration: none;
+                    color: $text-h2;
+                    margin-bottom: 10px;
+                    span{
+                        color: $foot-p;
+                    }
+                }
+                a span:hover{
+                    color: $w-satu;
+                    letter-spacing: 1px;
+                }
+            }
+            .copy {
+                p{
+                    @include m.flex(row, center);
+                    text-align: center;
+                    color: $foot-p;
+                }
+            }
+        }
+    }
+}
